@@ -1760,6 +1760,446 @@
      "model": "google/gemini-2.5-flash-lite"
     }
    ]
+  },
+  {
+   "type": "scan",
+   "at": "2026-10-18T06:08:21Z",
+   "spend_usd": 13952.47,
+   "kwh": [
+    710.3,
+    1969.8
+   ],
+   "avoidable_usd": 13206.01,
+   "calls": 23,
+   "sites": [
+    {
+     "id": "app/main.py::health",
+     "function": "health",
+     "file": "app/main.py",
+     "cost": 10.05,
+     "avoid": 10.05
+    },
+    {
+     "id": "app/main.py::chat",
+     "function": "chat",
+     "file": "app/main.py",
+     "cost": 17.81,
+     "avoid": 4.79
+    },
+    {
+     "id": "app/main.py::chat@85",
+     "function": "chat",
+     "file": "app/main.py",
+     "cost": 23.22,
+     "avoid": 22.46
+    },
+    {
+     "id": "app/services/classifier.py::classify_ticket",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "cost": 283.24,
+     "avoid": 279.1
+    },
+    {
+     "id": "app/services/classifier.py::classify_ticket@17",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "cost": 1940.84,
+     "avoid": 1936.7
+    },
+    {
+     "id": "app/services/extractor.py::extract_fields",
+     "function": "extract_fields",
+     "file": "app/services/extractor.py",
+     "cost": 823.11,
+     "avoid": 819.79
+    },
+    {
+     "id": "app/services/kb_search.py::search",
+     "function": "search",
+     "file": "app/services/kb_search.py",
+     "cost": 2518.14,
+     "avoid": 2517.15
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "cost": 0.04,
+     "avoid": 0.03
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic@36",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "cost": 1.09,
+     "avoid": 1.08
+    },
+    {
+     "id": "app/services/kb_search.py::rewrite_query",
+     "function": "rewrite_query",
+     "file": "app/services/kb_search.py",
+     "cost": 2.2,
+     "avoid": 1.32
+    },
+    {
+     "id": "app/services/reply_drafter.py::draft_reply",
+     "function": "draft_reply",
+     "file": "app/services/reply_drafter.py",
+     "cost": 804.22,
+     "avoid": 476.23
+    },
+    {
+     "id": "app/services/reply_drafter.py::draft_reply@28",
+     "function": "draft_reply",
+     "file": "app/services/reply_drafter.py",
+     "cost": 286.06,
+     "avoid": 20.49
+    },
+    {
+     "id": "app/services/reply_drafter.py::polish",
+     "function": "polish",
+     "file": "app/services/reply_drafter.py",
+     "cost": 174.8,
+     "avoid": 163.17
+    },
+    {
+     "id": "app/services/sentiment.py::get_sentiment",
+     "function": "get_sentiment",
+     "file": "app/services/sentiment.py",
+     "cost": 3960.91,
+     "avoid": 3958.12
+    },
+    {
+     "id": "app/services/summarizer.py::summarize_thread",
+     "function": "summarize_thread",
+     "file": "app/services/summarizer.py",
+     "cost": 111.21,
+     "avoid": 14.3
+    },
+    {
+     "id": "app/services/summarizer.py::verify_summary",
+     "function": "verify_summary",
+     "file": "app/services/summarizer.py",
+     "cost": 112.89,
+     "avoid": 111.33
+    },
+    {
+     "id": "app/services/tagger.py::tag_ticket",
+     "function": "tag_ticket",
+     "file": "app/services/tagger.py",
+     "cost": 2315.88,
+     "avoid": 2314.04
+    },
+    {
+     "id": "app/services/translator.py::translate",
+     "function": "translate",
+     "file": "app/services/translator.py",
+     "cost": 289.23,
+     "avoid": 280.24
+    },
+    {
+     "id": "app/services/translator.py::detect_language",
+     "function": "detect_language",
+     "file": "app/services/translator.py",
+     "cost": 273.12,
+     "avoid": 273.12
+    },
+    {
+     "id": "scripts/nightly_report.py::main",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 2.81,
+     "avoid": 1.43
+    },
+    {
+     "id": "scripts/nightly_report.py::main@36",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.96,
+     "avoid": 0.57
+    },
+    {
+     "id": "scripts/nightly_report.py::main@40",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.32,
+     "avoid": 0.18
+    },
+    {
+     "id": "scripts/nightly_report.py::main@45",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.32,
+     "avoid": 0.32
+    }
+   ],
+   "estimate": true,
+   "assumption": "each route or job runs 1,000 times a month"
+  },
+  {
+   "type": "proposed",
+   "at": "2026-10-18T06:11:07Z",
+   "pr": 3,
+   "saved_usd": 5037.39,
+   "kwh": [
+    270.1,
+    748.8
+   ],
+   "items": [
+    {
+     "id": "app/services/tagger.py::tag_ticket",
+     "function": "tag_ticket",
+     "file": "app/services/tagger.py",
+     "line": 10,
+     "saved_usd": 2103.44,
+     "kwh": [
+      157.68,
+      437.33
+     ],
+     "changes": [
+      "Simplified prompt text to remove unused system personas, policy handbooks, and reasoning instructions.",
+      "Set temperature to 0 for deterministic decision-making.",
+      "Set max_tokens to 3 to limit generation output to a single word answer."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/classifier.py::classify_ticket@17",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "line": 17,
+     "saved_usd": 1841.03,
+     "kwh": [
+      50.46,
+      139.91
+     ],
+     "changes": [
+      "Simplified prompt to request only the category label without requesting analysis, reasoning, or embedding full policy handbooks.",
+      "Reduced `max_tokens` from 8192 to 10 to fit the single-word category response.",
+      "Removed extended thinking retry (`anthropic_client.think`) to avoid unnecessary output token generation."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/reply_drafter.py::draft_reply",
+     "function": "draft_reply",
+     "file": "app/services/reply_drafter.py",
+     "line": 25,
+     "saved_usd": 476.23,
+     "kwh": [
+      29.9,
+      82.9
+     ],
+     "changes": [
+      "The LLM call inside the loop was removed. Instead, the prompt now asks for a JSON list of drafts.",
+      "`max_tokens` was adjusted to a more appropriate value for a single draft, assuming the model returns a list of drafts within a JSON object.",
+      "`response_format` was set to `{\"type\": \"json_object\"}` to request structured JSON output."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/translator.py::detect_language",
+     "function": "detect_language",
+     "file": "app/services/translator.py",
+     "line": 11,
+     "saved_usd": 273.12,
+     "kwh": [
+      12.5,
+      34.6
+     ],
+     "changes": [
+      "The prompt was simplified to only include the necessary instructions for language detection.",
+      "`max_tokens` was set to 10 to accommodate a single language name.",
+      "`temperature` was set to 0 for deterministic output."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/kb_search.py::search",
+     "function": "search",
+     "file": "app/services/kb_search.py",
+     "line": 22,
+     "saved_usd": 150.1,
+     "kwh": [
+      9.16,
+      25.41
+     ],
+     "changes": [
+      "Replaced large prompt with a minimal prompt asking directly for `SCORE: <n>`.",
+      "Removed reasoning and unnecessary system instructions that are discarded by the parser.",
+      "Set `temperature=0` for consistent numerical scoring."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/sentiment.py::get_sentiment",
+     "function": "get_sentiment",
+     "file": "app/services/sentiment.py",
+     "line": 13,
+     "saved_usd": 103.54,
+     "kwh": [
+      3.9,
+      10.82
+     ],
+     "changes": [
+      "Replaced large prompt incorporating company policies and knowledge base with a concise prompt focused strictly on sentiment classification.",
+      "Removed instructions requesting step-by-step reasoning and detailed explanations before answering."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/summarizer.py::verify_summary",
+     "function": "verify_summary",
+     "file": "app/services/summarizer.py",
+     "line": 17,
+     "saved_usd": 26.22,
+     "kwh": [
+      2.21,
+      6.11
+     ],
+     "changes": [
+      "The prompt asks for reasoning, but the code only checks for \"YES\" or \"NO\". Remove the instruction to explain reasoning.",
+      "The temperature is set to 1.0, which is too high for a decision-making task. Set temperature to 0.0.",
+      "The `max_tokens` parameter is not set, allowing for a large response. Set `max_tokens` to 3 to accommodate a \"YES\" or \"NO\" answer."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/reply_drafter.py::polish",
+     "function": "polish",
+     "file": "app/services/reply_drafter.py",
+     "line": 39,
+     "saved_usd": 23.34,
+     "kwh": [
+      1.31,
+      3.62
+     ],
+     "changes": [
+      "[model_overkill] Large model for a routine text task: openai/o3 is used for what looks like proofreading (the prompt contains \u201cgrammar\u201d). Small models usually handle this well. Compare openai/gpt-4.1-mini against openai/o3 on past inputs before switching.",
+      "[reasoning_overkill] Hidden reasoning on a simple task: This call uses openai/o3 (a reasoning model) to produce proofreading. Hidden reasoning tokens are billed as output. Turn reasoning off or lower the effort, then compare answers on past inputs.",
+      "[huge_prompt] Large prompt for a small task: Each call sends about 2,935 tokens of prompt, 2,635 of them fixed text that is the same on every call, to get back proofreading. Send only the instructions this task needs."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/summarizer.py::summarize_thread",
+     "function": "summarize_thread",
+     "file": "app/services/summarizer.py",
+     "line": 11,
+     "saved_usd": 14.3,
+     "kwh": [
+      1.16,
+      3.2
+     ],
+     "changes": [
+      "The LLM call should happen once after the loop, not inside it.",
+      "Set temperature to 0.0.",
+      "Set max_tokens to 1000."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/main.py::health",
+     "function": "health",
+     "file": "app/main.py",
+     "line": 35,
+     "saved_usd": 10.05,
+     "kwh": [
+      0.7,
+      2.0
+     ],
+     "changes": [
+      "The prompt was changed to \"Reply with only the word OK.\" to match the code's needs.",
+      "The `max_tokens` parameter was set to 3 to fit the expected output.",
+      "The `temperature` parameter was set to 0 for a deterministic response."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/translator.py::translate",
+     "function": "translate",
+     "file": "app/services/translator.py",
+     "line": 7,
+     "saved_usd": 8.37,
+     "kwh": [
+      0.5,
+      1.39
+     ],
+     "changes": [
+      "The prompt is too long and contains a lot of fixed text that is not necessary for the task. The prompt should be shortened to only include the necessary instructions and the text to be translated.",
+      "The temperature should be set to 0 for translation tasks to ensure consistent and accurate results.",
+      "The max_tokens should be set to a reasonable value for a translation task, such as 100, to avoid unnecessary costs."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/main.py::chat@85",
+     "function": "chat",
+     "file": "app/main.py",
+     "line": 85,
+     "saved_usd": 3.88,
+     "kwh": [
+      0.17,
+      0.45
+     ],
+     "changes": [
+      "The prompt was changed to ask for a 3-word title and nothing else.",
+      "The `max_tokens` parameter was set to 10 to fit a 3-word answer.",
+      "The `temperature` parameter was set to 0 for a deterministic answer."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "scripts/nightly_report.py::main",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "line": 30,
+     "saved_usd": 1.43,
+     "kwh": [
+      0.05,
+      0.1
+     ],
+     "changes": [
+      "The LLM call for `report` has `max_tokens` set to `4096`.",
+      "The LLM call for `count` has `temperature` set to `0`.",
+      "The LLM call for `count` has `max_tokens` set to `10`."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/kb_search.py::rewrite_query",
+     "function": "rewrite_query",
+     "file": "app/services/kb_search.py",
+     "line": 44,
+     "saved_usd": 1.32,
+     "kwh": [
+      0.18,
+      0.48
+     ],
+     "changes": [
+      "The system prompt was simplified to only include instructions relevant to the task of rewriting a query for search.",
+      "The `temperature` parameter was set to 0 for deterministic output."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic@36",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "line": 36,
+     "saved_usd": 1.02,
+     "kwh": [
+      0.19,
+      0.47
+     ],
+     "changes": [
+      "The finding about embedding the same data again on every request cannot be applied inside this function, as it requires changes to how `load_articles` and article embeddings are stored and managed outside of this specific function call.",
+      "The finding about using a large embedding model for search cannot be applied inside this function, as it requires changing the model used by `openai_client.embed`, which is called externally."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    }
+   ]
   }
  ]
 }
