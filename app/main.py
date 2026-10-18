@@ -32,7 +32,7 @@ def _tickets() -> list[dict]:
 
 @app.get("/health")
 def health():
-    reply = openai_client.chat("Reply with the word OK.", model="gpt-4.1", system=build_master_prompt())
+    reply = openai_client.chat("Reply with only the word OK.", model="gpt-4.1", system=build_master_prompt(), temperature=0, max_tokens=3)
     return {"status": "ok" if "OK" in reply.upper() else "degraded", "llm": reply}
 
 
@@ -83,7 +83,9 @@ def chat(req: ChatRequest):
 
     # Keep a running title for the session
     title = openai_client.reason(
-        "Give a 3-word title for this conversation:\n" + json.dumps(history)
+        "Reply with a 3-word title for this conversation, and nothing else:\n" + json.dumps(history[-2:]),
+        temperature=0,
+        max_tokens=10
     )
     return {"reply": reply, "title": title, "turns": len(history) // 2}
 
