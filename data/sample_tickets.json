@@ -1,0 +1,51 @@
+[
+  {
+    "id": "T-1001",
+    "body": "Hi, my order #SN-448812 says delivered but I never got it. Email is maria.g@example.com. Can you help?",
+    "thread": []
+  },
+  {
+    "id": "T-1002",
+    "body": "I was charged $9.99 twice this month for ShopNest Plus. Please refund the duplicate charge.",
+    "thread": [
+      {"role": "customer", "content": "Why do I have two charges on my card?"},
+      {"role": "agent", "content": "Sorry about that! Can you share the dates of both charges?"},
+      {"role": "customer", "content": "Oct 1 and Oct 3."}
+    ]
+  },
+  {
+    "id": "T-1003",
+    "body": "Love the new headphones, fastest delivery ever. Thanks team!",
+    "thread": []
+  },
+  {
+    "id": "T-1004",
+    "body": "La lámpara que pedí (pedido SN-551203) llegó rota. Quiero un reemplazo, por favor.",
+    "thread": []
+  },
+  {
+    "id": "T-1005",
+    "body": "This is the THIRD time I'm contacting you about my $1,240 laptop refund. If this isn't resolved by Friday my attorney will be in touch.",
+    "thread": [
+      {"role": "customer", "content": "I returned my laptop two weeks ago, order SN-390017. Where is my refund?"},
+      {"role": "agent", "content": "We see the return in transit. Refunds take 5-7 business days after receipt."},
+      {"role": "customer", "content": "It's been 10 business days since the warehouse got it."},
+      {"role": "agent", "content": "I've escalated this to our refunds team."}
+    ]
+  },
+  {
+    "id": "T-1006",
+    "body": "How do I reset my password? The link isn't working.",
+    "thread": []
+  },
+  {
+    "id": "T-1007",
+    "body": "Can you add a dark mode to the app? Would be great.",
+    "thread": []
+  },
+  {
+    "id": "T-1008",
+    "body": "I'd like to cancel my annual ShopNest Plus membership, I signed up 5 days ago. Account: jkim88@example.com",
+    "thread": []
+  }
+]

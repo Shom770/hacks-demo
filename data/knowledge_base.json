@@ -1,0 +1,16 @@
+[
+  {"id": "kb-001", "title": "How to start a return", "body": "Go to Orders > select the item > Start Return. Print the prepaid label and drop the package at any partner carrier location within 14 days of creating the return."},
+  {"id": "kb-002", "title": "Where is my refund?", "body": "Refunds are issued to your original payment method 5-7 business days after the warehouse receives your return. Bank processing may add 2-3 days."},
+  {"id": "kb-003", "title": "Tracking your package", "body": "Open Orders and click Track Package. Tracking updates may take up to 24 hours to appear after the label is created."},
+  {"id": "kb-004", "title": "Package marked delivered but not received", "body": "Check with neighbors and around your property. Wait 48 hours, as carriers sometimes mark packages delivered early. After 48 hours, contact support to open a lost-package claim."},
+  {"id": "kb-005", "title": "Resetting your password", "body": "Click 'Forgot password' on the sign-in page and follow the email link. The link expires after 1 hour."},
+  {"id": "kb-006", "title": "Account locked", "body": "After 5 failed login attempts your account is locked for 30 minutes. It will unlock automatically."},
+  {"id": "kb-007", "title": "Cancelling ShopNest Plus", "body": "Go to Account > Memberships > Cancel. Monthly members keep benefits until the end of the period. Annual members may be eligible for a prorated refund."},
+  {"id": "kb-008", "title": "Damaged item received", "body": "Report damage within 14 days via Orders > Report a Problem. Attach photos for items over $75. We will send a replacement or refund."},
+  {"id": "kb-009", "title": "International shipping and duties", "body": "We ship to 42 countries. Duties and taxes are collected on delivery unless you chose DDP at checkout."},
+  {"id": "kb-010", "title": "Changing your shipping address", "body": "Addresses can be changed within 1 hour of placing the order from the Orders page. After that, contact the carrier directly."},
+  {"id": "kb-011", "title": "Warranty claims", "body": "Electronics include a 1-year warranty. Submit a claim with your order ID and a description of the defect via Orders > Warranty Claim."},
+  {"id": "kb-012", "title": "Gift receipts and exchanges", "body": "Gift recipients can exchange items using the gift receipt code. Refunds go to the gift giver's original payment method."},
+  {"id": "kb-013", "title": "Using promo codes", "body": "Enter promo codes at checkout. Only one code per order. Codes cannot be applied after the order is placed."},
+  {"id": "kb-014", "title": "Payment declined", "body": "Verify the billing address matches your card statement. Try another card or contact your bank if the issue persists."}
+]
