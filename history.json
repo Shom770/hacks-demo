@@ -2640,6 +2640,243 @@
      "model": "google/gemini-2.5-flash-lite"
     }
    ]
+  },
+  {
+   "type": "scan",
+   "at": "2026-10-18T07:18:50Z",
+   "spend_usd": 13952.47,
+   "kwh": [
+    710.3,
+    1969.8
+   ],
+   "avoidable_usd": 13206.01,
+   "calls": 23,
+   "sites": [
+    {
+     "id": "app/main.py::health",
+     "function": "health",
+     "file": "app/main.py",
+     "cost": 10.05,
+     "avoid": 10.05
+    },
+    {
+     "id": "app/main.py::chat",
+     "function": "chat",
+     "file": "app/main.py",
+     "cost": 17.81,
+     "avoid": 4.79
+    },
+    {
+     "id": "app/main.py::chat@85",
+     "function": "chat",
+     "file": "app/main.py",
+     "cost": 23.22,
+     "avoid": 22.46
+    },
+    {
+     "id": "app/services/classifier.py::classify_ticket",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "cost": 283.24,
+     "avoid": 279.1
+    },
+    {
+     "id": "app/services/classifier.py::classify_ticket@17",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "cost": 1940.84,
+     "avoid": 1936.7
+    },
+    {
+     "id": "app/services/extractor.py::extract_fields",
+     "function": "extract_fields",
+     "file": "app/services/extractor.py",
+     "cost": 823.11,
+     "avoid": 819.79
+    },
+    {
+     "id": "app/services/kb_search.py::search",
+     "function": "search",
+     "file": "app/services/kb_search.py",
+     "cost": 2518.14,
+     "avoid": 2517.15
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "cost": 0.04,
+     "avoid": 0.03
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic@36",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "cost": 1.09,
+     "avoid": 1.08
+    },
+    {
+     "id": "app/services/kb_search.py::rewrite_query",
+     "function": "rewrite_query",
+     "file": "app/services/kb_search.py",
+     "cost": 2.2,
+     "avoid": 1.32
+    },
+    {
+     "id": "app/services/reply_drafter.py::draft_reply",
+     "function": "draft_reply",
+     "file": "app/services/reply_drafter.py",
+     "cost": 804.22,
+     "avoid": 476.23
+    },
+    {
+     "id": "app/services/reply_drafter.py::draft_reply@28",
+     "function": "draft_reply",
+     "file": "app/services/reply_drafter.py",
+     "cost": 286.06,
+     "avoid": 20.49
+    },
+    {
+     "id": "app/services/reply_drafter.py::polish",
+     "function": "polish",
+     "file": "app/services/reply_drafter.py",
+     "cost": 174.8,
+     "avoid": 163.17
+    },
+    {
+     "id": "app/services/sentiment.py::get_sentiment",
+     "function": "get_sentiment",
+     "file": "app/services/sentiment.py",
+     "cost": 3960.91,
+     "avoid": 3958.12
+    },
+    {
+     "id": "app/services/summarizer.py::summarize_thread",
+     "function": "summarize_thread",
+     "file": "app/services/summarizer.py",
+     "cost": 111.21,
+     "avoid": 14.3
+    },
+    {
+     "id": "app/services/summarizer.py::verify_summary",
+     "function": "verify_summary",
+     "file": "app/services/summarizer.py",
+     "cost": 112.89,
+     "avoid": 111.33
+    },
+    {
+     "id": "app/services/tagger.py::tag_ticket",
+     "function": "tag_ticket",
+     "file": "app/services/tagger.py",
+     "cost": 2315.88,
+     "avoid": 2314.04
+    },
+    {
+     "id": "app/services/translator.py::translate",
+     "function": "translate",
+     "file": "app/services/translator.py",
+     "cost": 289.23,
+     "avoid": 280.24
+    },
+    {
+     "id": "app/services/translator.py::detect_language",
+     "function": "detect_language",
+     "file": "app/services/translator.py",
+     "cost": 273.12,
+     "avoid": 273.12
+    },
+    {
+     "id": "scripts/nightly_report.py::main",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 2.81,
+     "avoid": 1.43
+    },
+    {
+     "id": "scripts/nightly_report.py::main@36",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.96,
+     "avoid": 0.57
+    },
+    {
+     "id": "scripts/nightly_report.py::main@40",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.32,
+     "avoid": 0.18
+    },
+    {
+     "id": "scripts/nightly_report.py::main@45",
+     "function": "main",
+     "file": "scripts/nightly_report.py",
+     "cost": 0.32,
+     "avoid": 0.32
+    }
+   ],
+   "estimate": true,
+   "assumption": "each route or job runs 1,000 times a month"
+  },
+  {
+   "type": "proposed",
+   "at": "2026-10-18T07:20:41Z",
+   "pr": 4,
+   "saved_usd": 1945.59,
+   "kwh": [
+    54.6,
+    151.2
+   ],
+   "items": [
+    {
+     "id": "app/services/classifier.py::classify_ticket@17",
+     "function": "classify_ticket",
+     "file": "app/services/classifier.py",
+     "line": 17,
+     "saved_usd": 1841.03,
+     "kwh": [
+      50.46,
+      139.91
+     ],
+     "changes": [
+      "Simplified prompt to request only the category label without requesting analysis, reasoning, or embedding full policy handbooks.",
+      "Reduced `max_tokens` from 8192 to 10 to fit the single-word category response.",
+      "Removed extended thinking retry (`anthropic_client.think`) to avoid unnecessary output token generation."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/sentiment.py::get_sentiment",
+     "function": "get_sentiment",
+     "file": "app/services/sentiment.py",
+     "line": 13,
+     "saved_usd": 103.54,
+     "kwh": [
+      3.9,
+      10.82
+     ],
+     "changes": [
+      "Replaced large prompt incorporating company policies and knowledge base with a concise prompt focused strictly on sentiment classification.",
+      "Removed instructions requesting step-by-step reasoning and detailed explanations before answering."
+     ],
+     "model": "models/gemini-3.5-flash"
+    },
+    {
+     "id": "app/services/kb_search.py::search_semantic@36",
+     "function": "search_semantic",
+     "file": "app/services/kb_search.py",
+     "line": 36,
+     "saved_usd": 1.02,
+     "kwh": [
+      0.19,
+      0.47
+     ],
+     "changes": [
+      "The finding about embedding the same data again on every request cannot be applied inside this function, as it requires changes to how `load_articles` and article embeddings are stored and managed outside of this specific function call.",
+      "The finding about using a large embedding model for search cannot be applied inside this function, as it requires changing the model used by `openai_client.embed`, which is called externally."
+     ],
+     "model": "google/gemini-2.5-flash-lite"
+    }
+   ]
   }
  ]
 }
