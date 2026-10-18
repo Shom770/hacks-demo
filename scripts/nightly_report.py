@@ -30,6 +30,7 @@ def main():
     report = anthropic_client.think(
         f"Write a nightly executive report on today's support tickets.\n\n{dump}",
         system=build_master_prompt(),
+        max_tokens=4096, # Adjusted max_tokens to fit the expected report length
     )
 
     # Get second and third opinions on the report
@@ -45,6 +46,8 @@ def main():
     count = openrouter_client.complete(
         f"How many tickets are in this JSON? Reply with a number.\n\n{dump}",
         model="openai/o3",
+        temperature=0, # Set temperature to 0 for a deterministic answer
+        max_tokens=10, # Set max_tokens to fit a single number
     )
 
     print(f"Tickets: {count}\n\n{final}")
