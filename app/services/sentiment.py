@@ -7,7 +7,7 @@ LABELS = ("positive", "negative", "neutral")
 
 
 def get_sentiment(text: str) -> str:
-    prompt = SENTIMENT_PROMPT.format(master=build_master_prompt(), text=text)
+    prompt = f"Determine the sentiment of the customer message below.\n\nMessage:\n{text}\n\nReply with only one word: positive, negative, or neutral."
 
     # Ensemble across frontier models for accuracy
     answers = openrouter_client.ask_multiple_models(prompt)
