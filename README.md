@@ -46,3 +46,14 @@ app/
 data/          policy handbook, knowledge base, sample tickets
 scripts/       batch demo + nightly report
 ```
+
+## Tests
+```bash
+pip install -r requirements-dev.txt
+pytest                                      # offline: contracts, pipeline, API, LLM cost budget
+RUN_LIVE_EVALS=1 pytest -m live             # real providers: accuracy evals on the golden set
+UPDATE_LLM_BASELINE=1 pytest tests/test_llm_budget.py   # re-record cost baseline
+```
+- Offline tests fake every provider at the HTTP layer (`tests/fake_llm.py`), so they survive model/provider/SDK/prompt changes. Calls to an unknown endpoint fail the test.
+- Expected answers live in `tests/golden/tickets.json`.
+- `tests/test_llm_budget.py` fails if a change increases LLM calls or input tokens vs `tests/baselines/llm_usage.json`, and writes a before/after diff to `output/llm_usage.json`.

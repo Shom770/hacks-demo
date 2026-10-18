@@ -4,7 +4,7 @@ from app import config
 
 
 def message(prompt, system="", model=config.DEFAULT_CLAUDE_MODEL, max_tokens=8192, history=None):
-    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY, timeout=1800)
 
     messages = list(history or [])
     messages.append({"role": "user", "content": prompt})
@@ -20,7 +20,7 @@ def message(prompt, system="", model=config.DEFAULT_CLAUDE_MODEL, max_tokens=819
 
 def think(prompt, system=""):
     """Extended thinking for harder problems."""
-    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY, timeout=1800)
     response = client.messages.create(
         model=config.DEFAULT_CLAUDE_MODEL,
         max_tokens=64000,
