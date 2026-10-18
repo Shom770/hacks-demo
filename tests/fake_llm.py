@@ -23,6 +23,13 @@ import requests
 from app.config import TICKET_TAGS, load_text
 
 CATEGORIES = ["billing", "shipping", "account", "product", "other"]
+KNOWN_HOSTS = {
+    "api.openai.com": "openai",
+    "openrouter.ai": "openrouter",
+    "api.groq.com": "groq",
+    "api.anthropic.com": "anthropic",
+    "generativelanguage.googleapis.com": "gemini",
+}
 TEXT_KEYS = {"content", "text", "system", "input", "prompt", "instructions", "system_instruction", "systemInstruction"}
 
 
@@ -133,23 +140,22 @@ class FakeLLM:
         except json.JSONDecodeError:
             payload = {}
 
-        if host in ("api.openai.com", "openrouter.ai", "api.groq.com"):
-            provider = {"api.openai.com": "openai", "openrouter.ai": "openrouter", "api.groq.com": "groq"}[host]
-            if path.endswith("/chat/completions"):
-                return 200, self._openai_chat(provider, payload)
-            if path.endswith("/responses"):
-                return 200, self._openai_responses(provider, payload)
-            if path.endswith("/embeddings"):
-                return 200, self._openai_embeddings(provider, payload)
-        elif host == "api.anthropic.com":
-            if path.endswith("/v1/messages"):
-                return 200, self._anthropic(payload)
-            if path.endswith("/v1/messages/count_tokens"):
-                return 200, {"input_tokens": est_tokens(self._prompt_text(payload))}
-        elif host == "generativelanguage.googleapis.com":
-            if ":generateContent" in path:
-                model = path.split("/models/")[-1].split(":")[0]
-                return 200, self._gemini(model, payload)
+        # Route on the API path, not the host, so provider base URLs pointed at a
+        # gateway/proxy (OPENAI_BASE_URL, ANTHROPIC_BASE_URL, ...) still hit the fake.
+        provider = KNOWN_HOSTS.get(host, host)
+        if path.endswith("/chat/completions"):
+            return 200, self._openai_chat(provider, payload)
+        if path.endswith("/responses"):
+            return 200, self._openai_responses(provider, payload)
+        if path.endswith("/embeddings"):
+            return 200, self._openai_embeddings(provider, payload)
+        if path.endswith("/messages/count_tokens"):
+            return 200, {"input_tokens": est_tokens(self._prompt_text(payload))}
+        if path.endswith("/messages"):
+            return 200, self._anthropic(payload)
+        if ":generateContent" in path:
+            model = path.split("/models/")[-1].split(":")[0]
+            return 200, self._gemini(model, payload)
 
         self.unexpected.append(f"{host}{path}")
         return 404, {"error": {"message": f"fake_llm has no route for {host}{path}", "type": "not_found"}}

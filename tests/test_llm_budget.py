@@ -93,5 +93,8 @@ def teardown_module(module):
             "calls_delta": usage["calls"] - b["calls"] if b else None,
             "input_tokens_delta": usage["input_tokens"] - b["input_tokens"] if b else None,
         }
-    REPORT_PATH.parent.mkdir(exist_ok=True)
-    REPORT_PATH.write_text(json.dumps(report, indent=2) + "\n")
+    try:
+        REPORT_PATH.parent.mkdir(exist_ok=True)
+        REPORT_PATH.write_text(json.dumps(report, indent=2) + "\n")
+    except OSError as e:  # read-only checkout in some sandboxes
+        print(f"could not write {REPORT_PATH}: {e}\n{json.dumps(report, indent=2)}")

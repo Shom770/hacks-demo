@@ -1,10 +1,16 @@
 import json
 import os
+import sys
 from pathlib import Path
 
 import pytest
 
-from tests.fake_llm import FakeLLM
+# Make `app` and `tests` importable however pytest is invoked (any cwd, no pytest.ini).
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tests.fake_llm import FakeLLM  # noqa: E402
 
 GOLDEN_PATH = Path(__file__).parent / "golden" / "tickets.json"
 SAMPLE_PATH = Path(__file__).resolve().parent.parent / "data" / "sample_tickets.json"
